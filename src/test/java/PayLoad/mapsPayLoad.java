@@ -3,9 +3,7 @@
  ** @Category: Route Testing Diploma
  ** @brief: RestASSURED
 /** ==============================================**/
-package mapsPayLoad;
-
-import io.restassured.path.json.JsonPath;
+package PayLoad;
 
 public class mapsPayLoad
 {

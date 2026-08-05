@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 
 import static io.restassured.RestAssured.given;
-import static mapsPayLoad.mapsPayLoad.updatePlaceRequestBody;
+import static PayLoad.mapsPayLoad.updatePlaceRequestBody;
 import static org.hamcrest.Matchers.equalTo;
 
 public class MapsRequest
