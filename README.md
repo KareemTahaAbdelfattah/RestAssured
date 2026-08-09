@@ -6,3 +6,4 @@ Why testers use it:
 - It supports common HTTP methods like GET, POST, PUT, DELETE, and PATCH.
 - It allows validation of JSON and XML responses.
 - It integrates well with TestNG, JUnit, Maven, Gradle, and CI/CD pipelines.
+- Serialization and Deserialization.
