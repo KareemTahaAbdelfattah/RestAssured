@@ -7,6 +7,7 @@ package deserialization;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pojo.instructorCourse.Instructor;
@@ -46,5 +47,22 @@ public class GetCourses {
                 .extract().response().as(Instructor.class);  //Deserialization
 
         System.out.println(courseDetails.getLinkedIn());
+        System.out.println(courseDetails.getCourses().getWebAutomation().get(0).getCourseTitle());
+
+        // Number of courses
+        int numberOfCourses = courseDetails.getCourses().getApi().size();
+        System.out.println("Number of API Courses: " + numberOfCourses);
+
+        for(int i = 0; i < numberOfCourses; i++){
+            String courseTitle = courseDetails.getCourses().getApi().get(i).getCourseTitle();
+
+            if(courseTitle.equals("SoapUI Webservices testing")){
+                Assert.assertTrue(courseDetails.getCourses().getApi().get(i).getPrice().equals("40")
+                        , "Incorrect price for SoapUI Webservices testing");
+                System.out.println("Price for SoapUI Webservices testing: "
+                        + courseDetails.getCourses().getApi().get(i).getPrice());
+                break;
+            }
+        }
     }
 }
